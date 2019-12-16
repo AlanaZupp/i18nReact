@@ -1,5 +1,5 @@
 const { BlobServiceClient } = require('@azure/storage-blob');
-const CONNECT_STR = process.env.CONNECT_STR;
+const CONNECT_STR = process.env.CONNECT_STR; //fix connection string
 
  async function main() {
     // Quick start code goes here

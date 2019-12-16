@@ -1,8 +1,11 @@
 {
-    "MainScreenFirstLine": {
-        "1": "语言"
-    },
-    "MainScreenSecondLine": {
-        "1": "翻译申请"
-    }
+  "MainScreenFirstLine": {
+    "1": "语言"
+  },
+  "MainScreenSecondLine": {
+    "1": "翻译申请"
+  },
+  "MainScreenThirdLine": {
+    "1": "翻译申请Teeth MIlk"
+  }
 }
