@@ -4,12 +4,14 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
 const fallbackLng = ['en'];
-const availableLanguages = ['en', 'ko', 'chi'];
+const availableLanguages = ['en'];//fetch
 
 
 const options = {
+  
   // order and from where user language should be detected
   order: [ 'navigator', 'htmlTag', 'path', 'subdomain'],
+
 
   // keys or params to lookup language from
   lookupQuerystring: 'lng',
@@ -30,8 +32,12 @@ const options = {
   htmlTag: document.documentElement,
 
   // only detect languages that are in the whitelist
-  checkWhitelist: true
+  checkWhitelist: true, 
+  crossDomain: true,
+  dynamicLoad: true 
 }
+
+
 
 i18n
   .use(Backend) // load translation using xhr -> see /public/locales. We will add locales in the next step
@@ -43,7 +49,11 @@ i18n
   .init({
     fallbackLng, // if user computer language is not on the list of available languages, than we will be using the fallback language specified earlier
     debug: true,
-    whitelist: availableLanguages,
+    backend: {
+      loadPath: 'https://jsonstorageteethmilk.blob.core.windows.net/languages/{{lng}}/{{ns}}.json',
+     
+    },
+    //whitelist: availableLanguages,
     detection: options,
 
     interpolation: {
